@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anjali Somasiri | Portfolio</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+    }
+  </script>
+
+  <!-- Flowbite CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
+  <!-- Heroicons CDN -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Heroicons CDN -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    /* Prevent horizontal overflow on small screens and enforce sensible defaults */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-500">
+  <!-- Skeleton loader shown while page assets initialize -->
+  <div id="skeleton" class="fixed inset-0 animate-pulse flex flex-col p-6 gap-6 bg-white dark:bg-gray-900" style="z-index:9999;">
+    <div class="h-16 w-full rounded-md"></div>
+    <div class="flex-1 space-y-4 overflow-hidden">
+      <div class="h-4 w-3/4 rounded-md bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+      <div class="h-4 w-full rounded-xl bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="h-4 rounded-xl bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+        <div class="h-4 rounded-xl bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+        <div class="h-4 rounded-xl bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+      </div>
+      <div class="h-4 w-full rounded-xl bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="h-4 rounded-xl bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+        <div class="h-4 rounded-xl bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+      </div>
+      <div class="h-4 w-full rounded-xl bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="h-4 rounded-xl bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+        <div class="h-4 rounded-xl bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+        <div class="h-4 rounded-xl bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="fixed w-full bg-white dark:bg-gray-800 shadow-lg z-50 transition-colors duration-500">
+    <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
+      <div class="text-xl font-bold text-indigo-600 dark:text-indigo-400 tracking-wide">Anjali Somasiri</div>
+      <!-- Desktop Nav -->
+      <nav class="space-x-6 hidden md:flex text-lg font-medium">
+        <a href="#about" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">About Me</a>
+        <a href="future.html" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Future Dreams</a>
+        <a href="education.html" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Education</a>
+        <a href="skills.html" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Skills</a>
+        <a href="experience.html" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Experience</a>
+      </nav>
+
+      <div class="flex items-center space-x-4">
+        <!-- Dark/Light toggle -->
+        <button id="themeToggle" class="text-gray-800 dark:text-gray-200 focus:outline-none">
+          <i id="themeIcon" data-feather="sun" class="w-6 h-6"></i>
+        </button>
+        <!-- Mobile Menu Button -->
+        <button id="menuBtn"
+          class="md:hidden focus:outline-none p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+          <i data-feather="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden flex-col md:hidden bg-white dark:bg-gray-800 py-4 shadow-lg space-y-2 px-6">
+      <a href="#about" class="block hover:text-indigo-600">About Me</a>
+      <a href="education.html" class="block hover:text-indigo-600">Education</a>
+      <a href="skills.html" class="block hover:text-indigo-600">Skills</a>
+      <a href="future.html" class="block hover:text-indigo-600">Future Dreams</a>
+      <a href="experience.html" class="block hover:text-indigo-600">Experience</a>
+    </div>
+  </header>
+
+  <!-- LANDING SECTION -->
+  <section
+    class="min-h-screen flex flex-col md:flex-row items-center justify-center bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900 px-6 md:px-20 pt-28">
+    <div class="md:w-1/2 text-center md:text-left" data-aos="fade-right">
+      <h1 class="text-4xl md:text-5xl font-bold text-indigo-600 dark:text-indigo-400 mb-4">Anjali Somasiri</h1>
+      <p class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-6">Applied Sciences Undergraduate | Physics &
+        Chemistry | Aspiring Researcher & Sustainability Advocate</p>
+      <a href="#about"
+        class="bg-indigo-600 dark:bg-indigo-500 text-white px-6 py-3 rounded-lg hover:bg-indigo-500 dark:hover:bg-indigo-400 transition">Explore
+        Portfolio</a>
+    </div>
+      <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center" data-aos="fade-left">
+      <div class="relative group">
+        <div
+          class="absolute inset-0 bg-indigo-300 dark:bg-indigo-700 rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition z-0">
+        </div>
+        <img src="images/profile_photo.jpeg" alt="Anjali Somasiri"
+          class="rounded-full w-72 h-72 object-cover shadow-2xl border-4 border-indigo-200 dark:border-indigo-500 relative z-10">
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT ME -->
+  <!-- <section id="about" class="max-w-6xl mx-auto py-20 px-6" data-aos="fade-up">
+    <h2 class="text-4xl font-bold text-indigo-600 dark:text-indigo-400 mb-10">About Me</h2>
+    <div class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto px-6">
+      <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+        <h3 class="text-2xl font-semibold mb-4 flex items-center gap-2">
+          <i data-feather="user" class="text-indigo-600 dark:text-indigo-400"></i> Who I Am
+        </h3>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+          I’m Anjali Nimesha Somasiri, an undergraduate student at Rajarata University of Sri Lanka,
+          pursuing a BSc in Applied Science with a specialization in Physics and Chemistry. My academic
+          journey blends curiosity-driven learning and hands-on exploration in both theoretical and practical
+          aspects of science.
+        </p>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed"">
+            I am passionate about research, sustainability, and science communication, combining academic
+            knowledge with real-world experience—from banking to environmental volunteering.
+          </p>
+          <p class=" text-gray-700 dark:text-gray-300 leading-relaxed"">
+          This portfolio reflects my journey so far, highlighting projects, experiments, and experiences that
+          have shaped me as a student, researcher, and aspiring scientist.
+        </p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+        <h3 class="text-2xl font-semibold mb-4 flex items-center gap-2">
+          <i data-feather="target" class="text-indigo-600 dark:text-indigo-400"></i> My Mission
+        </h3>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+          I am passionate about research, sustainability, and science communication...
+        </p>
+        <a href="#" class="inline-flex items-center text-white bg-indigo-600 hover:bg-indigo-700
+         border border-transparent focus:ring-4 focus:ring-indigo-300
+         shadow-sm font-medium leading-5 rounded-md text-sm px-4 py-2.5
+         focus:outline-none">
+          Read more
+          <svg class="w-4 h-4 ms-1.5 rtl:rotate-180 -me-0.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m14 0-4 4m4-4-4-4" />
+          </svg>
+        </a>
+
+      </div>
+    </div>
+    </div>
+  </section> -->
+  <!-- ABOUT ME -->
+  <section id="about" class="max-w-6xl mx-auto py-20 px-6" data-aos="fade-up">
+    <h2 class="text-4xl font-bold text-indigo-600 dark:text-indigo-400 mb-10">
+      About Me
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-10">
+
+      <!-- CARD 1 — WHO I AM -->
+      <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+        <h3 class="text-2xl font-semibold mb-4 flex items-center gap-2">
+          <i data-feather="user" class="text-indigo-600 dark:text-indigo-400"></i> Who I Am
+        </h3>
+
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+          I’m Anjali Nimesha Somasiri, an undergraduate student at Rajarata University of Sri Lanka
+          pursuing a BSc in Applied Science specializing in Physics & Chemistry.
+        </p>
+
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+          My academic journey blends curiosity-driven learning with hands-on laboratory and field experience.
+        </p>
+
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+          This portfolio showcases the projects, research, and experiences that shaped my scientific journey.
+        </p>
+        <!-- Personal Details Section -->
+<div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700 dark:text-gray-300">
+
+  <div class="flex items-center gap-3">
+    <i data-feather="user" class="text-indigo-600 dark:text-indigo-400"></i>
+    <p><span class="font-semibold">Name:</span> Anjali N. Somasiri</p>
+  </div>
+
+  <div class="flex items-center gap-3">
+    <i data-feather="calendar" class="text-indigo-600 dark:text-indigo-400"></i>
+    <p><span class="font-semibold">Age:</span> 23</p>
+  </div>
+
+  <div class="flex items-center gap-3">
+    <i data-feather="phone" class="text-indigo-600 dark:text-indigo-400"></i>
+    <p>+94 XX XXX XXXX</p>
+  </div>
+
+  <div class="flex items-center gap-3">
+    <i data-feather="mail" class="text-indigo-600 dark:text-indigo-400"></i>
+    <p>anjali@example.com</p>
+  </div>
+
+  <div class="flex items-center gap-3 sm:col-span-2">
+    <i data-feather="linkedin" class="text-indigo-600 dark:text-indigo-400"></i>
+    <a href="#" class="hover:underline">linkedin.com/in/anjali-somasiri</a>
+  </div>
+
+  <div class="flex items-center gap-3 ">
+    <i data-feather="map-pin" class="text-indigo-600 dark:text-indigo-400"></i>
+    <p>Dambulla, Sri Lanka</p>
+  </div>
+
+
+  <div class="flex items-center gap-3">
+        <a href="future.html" class="inline-flex items-center text-white bg-indigo-600 hover:bg-indigo-700
+         border border-transparent focus:ring-4 focus:ring-indigo-300
+         shadow-sm font-large leading-5 rounded-md text-sm px-4 py-2.5
+         focus:outline-none">
+          Future Dearms
+          <svg class="w-4 h-4 ms-1.5 rtl:rotate-180 -me-0.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m14 0-4 4m4-4-4-4" />
+          </svg>
+        </a>
+  </div> 
+
+</div>
+
+      </div>
+
+      <!-- CARD 2 — MY MISSION -->
+      <!-- <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+      <h3 class="text-2xl font-semibold mb-4 flex items-center gap-2">
+        <i data-feather="target" class="text-indigo-600 dark:text-indigo-400"></i> My Mission
+      </h3>
+
+      <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+        I am passionate about research, sustainability, and science communication.  
+        My mission is to connect scientific knowledge with real-world solutions that help people, communities, and the environment.
+      </p>
+
+      <a href="#future-dreams"
+        class="inline-flex items-center text-white bg-indigo-600 hover:bg-indigo-700 border border-transparent focus:ring-4 focus:ring-indigo-300 shadow-sm font-medium leading-5 rounded-md text-sm px-4 py-2.5">
+        Read more
+        <svg class="w-4 h-4 ms-1.5 rtl:rotate-180 -me-0.5" aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m14 0-4 4m4-4-4-4" />
+        </svg>
+      </a>
+    </div> -->
+
+      <!-- CARD 3 — EDUCATION TIMELINE INSIDE THE CARD -->
+      <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+        <h3 class="text-2xl font-semibold mb-4 flex items-center gap-2">
+          <i data-feather="book-open" class="text-indigo-600 dark:text-indigo-400"></i> Education
+        </h3>
+
+        <ol class="relative border-s border-gray-300 dark:border-gray-700">
+
+          <!-- Timeline item 1 -->
+          <li class="mb-10 ms-6">
+            <span
+              class="absolute flex items-center justify-center w-6 h-6 bg-indigo-200 dark:bg-indigo-600 text-indigo-700 dark:text-white rounded-full -start-3 ring-8 ring-gray-100 dark:ring-gray-800">
+              <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z" />
+              </svg>
+            </span>
+
+            <time
+              class="bg-gray-200 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-gray-200 text-xs font-medium px-1.5 py-0.5 rounded">
+              March 13th, 2025 – Present
+            </time>
+
+            <h4 class="mt-2 text-lg font-semibold text-gray-900 dark:text-gray-100">
+              B.Sc. in Applied Sciences – Physics & Chemistry
+            </h4>
+            <p class="text-gray-700 dark:text-gray-300">
+              Rajarata University of Sri Lanka.
+            </p>
+          </li>
+
+          <!-- Timeline item 2 -->
+          <li class="mb-10 ms-6">
+            <span
+              class="absolute flex items-center justify-center w-6 h-6 bg-indigo-200 dark:bg-indigo-600 text-indigo-700 dark:text-white rounded-full -start-3 ring-8 ring-gray-100 dark:ring-gray-800">
+              <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z" />
+              </svg>
+            </span>
+
+            <time
+              class="bg-gray-200 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-gray-200 text-xs font-medium px-1.5 py-0.5 rounded">
+              January 09th, 2025 – January 09th, 2017
+            </time>
+
+            <h4 class="mt-2 text-lg font-semibold text-gray-900 dark:text-gray-100">
+              G.C.E. Advanced Level – Biological Science Stream
+            </h4>
+            <p class="text-gray-700 dark:text-gray-300">
+              K/ Seethadevi Girls' College — Grades: B, B, C.
+            </p>
+          </li>
+
+          <!-- Timeline item 3 -->
+          <li class="ms-6">
+            <span
+              class="absolute flex items-center justify-center w-6 h-6 bg-indigo-200 dark:bg-indigo-600 text-indigo-700 dark:text-white rounded-full -start-3 ring-8 ring-gray-100 dark:ring-gray-800">
+              <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z" />
+              </svg>
+            </span>
+
+            <time
+              class="bg-gray-200 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-gray-200 text-xs font-medium px-1.5 py-0.5 rounded">
+              October 14th, 2024 – October 14th, 2014
+            </time>
+
+            <h4 class="mt-2 text-lg font-semibold text-gray-900 dark:text-gray-100">
+              G.C.E. Ordinary Level
+            </h4>
+            <p class="text-gray-700 dark:text-gray-300">
+              K/ Seethadevi Girls' College — Results: A7, B2.
+            </p>
+          </li>
+
+        </ol>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Social Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-10 mt-16">
+    <div class="max-w-7xl mx-auto text-center space-y-4">
+      <h3 class="text-xl font-semibold text-indigo-400">Connect with Me</h3>
+
+      <div class="flex justify-center space-x-6">
+        <a href="https://www.facebook.com/anjali.nimesha.37?mibextid=ZbWKwL" class="hover:text-indigo-400 transition"><i
+            data-feather="facebook"></i></a>
+        <a href="#" class="hover:text-indigo-400 transition"><i data-feather="instagram"></i></a>
+        <a href="https://www.linkedin.com/in/anjali-somasiri-729057319/" class="hover:text-indigo-400 transition"><i
+            data-feather="linkedin"></i></a>
+        <a href="#" class="hover:text-indigo-400 transition"><i data-feather="github"></i></a>
+      </div>
+      <p class="text-sm opacity-70">© 2025 Anjali Somasiri — All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="scripts/main.js"></script>
+  <script>
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(sec => {
+        const top = window.scrollY;
+        if (top >= sec.offsetTop - 100) current = sec.getAttribute('id');
+      });
+
+      navLinks.forEach(a => {
+        a.classList.remove('text-indigo-600', 'dark:text-indigo-400', 'font-semibold');
+        if (a.getAttribute('href').includes(current)) {
+          a.classList.add('text-indigo-600', 'dark:text-indigo-400', 'font-semibold');
+        }
+      });
+    });
+  </script>
+  <!-- theme toggle handled centrally in scripts/main.js -->
+
+  <!-- Updated Timeline Education Styling (Flowbite + Tailwind) -->
+  <style>
+    .timeline {
+      border-left: 4px solid #6366f1;
+      margin-left: 1rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: -0.45rem;
+      width: 1rem;
+      height: 1rem;
+      background-color: #6366f1;
+      border-radius: 9999px;
+    }
+  </style>
+
+
+</body>
+
+</html>

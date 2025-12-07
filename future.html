@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anjali Somasiri | Future Dreams</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+    }
+  </script>
+</script>
+  <script>
+    // Fade out + remove skeleton overlay once all resources are loaded
+    window.addEventListener('load', function() {
+      const s = document.getElementById('skeleton');
+      if (!s) return;
+      setTimeout(function() {
+        s.style.transition = 'opacity 300ms ease';
+        s.style.opacity = '0';
+        setTimeout(function() { s.remove(); }, 350);
+      }, 250);
+    });
+  </script>
+  <!-- Flowbite CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
+  <!-- Heroicons CDN -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="scripts/main.js"></script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { overflow-x: hidden; }
+    img { max-width: 100%; height: auto; display: block; }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-500">
+  <!-- Skeleton loader shown while page assets initialize -->
+  <div id="skeleton" class="fixed inset-0 animate-pulse flex flex-col p-6 gap-6 bg-white dark:bg-gray-900" style="z-index:9999;">
+    <div class="h-16 w-full rounded-md "></div>
+    <div class="flex-1 space-y-4 overflow-hidden">
+      <div class="h-4 w-3/4 rounded-md bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+      <div class="h-4 w-full rounded-xl bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="h-4 rounded-xl bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+        <div class="h-4 rounded-xl bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+        <div class="h-4 rounded-xl bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+      </div>
+      <div class="h-4 w-full rounded-xl bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="h-4 rounded-xl bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+        <div class="h-4 rounded-xl bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+      </div>
+      <div class="h-4 w-full rounded-xl bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="h-4 rounded-xl bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+        <div class="h-4 rounded-xl bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+        <div class="h-4 rounded-xl bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="fixed w-full bg-white dark:bg-gray-800 shadow-lg z-50 transition-colors duration-500">
+    <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
+      <div class="text-xl font-bold text-indigo-600 dark:text-indigo-400 tracking-wide">Anjali Somasiri</div>
+      <!-- Desktop Nav -->
+      <nav class="space-x-6 hidden md:flex text-lg font-medium">
+        <a href="index.html#about" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">About Me</a>
+        <a href="future.html" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Future Dreams</a>
+        <a href="education.html" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Education</a>
+        <a href="skills.html" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Skills</a>
+        <a href="experience.html" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Experience</a>
+      </nav>
+
+      <div class="flex items-center space-x-4">
+        <button id="themeToggle" class="text-gray-800 dark:text-gray-200 focus:outline-none">
+          <i id="themeIcon" data-feather="sun" class="w-6 h-6"></i>
+        </button>
+        <button id="menuBtn" class="md:hidden focus:outline-none p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+          <i data-feather="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="hidden flex-col md:hidden bg-white dark:bg-gray-800 py-4 shadow-lg space-y-2 px-6">
+      <a href="index.html#about" class="block hover:text-indigo-600">About Me</a>
+      <a href="education.html" class="block hover:text-indigo-600">Education</a>
+      <a href="skills.html" class="block hover:text-indigo-600">Skills</a>
+      <a href="future.html" class="block hover:text-indigo-600">Future Dreams</a>
+      <a href="experience.html" class="block hover:text-indigo-600">Experience</a>
+    </div>
+  </header>
+
+  <!-- FUTURE DREAMS -->
+  <main class="pt-28">
+<section id="future" class="bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900 mx-auto py-16 px-6" data-aos="fade-up">
+
+  <h2 class="text-5xl font-bold text-indigo-600 dark:text-indigo-400 mb-6 text-center">
+    Future Dreams & Career Goals
+  </h2>
+
+  <div class="hidden sm:block">
+    <img 
+      src="images/future_banner.jpg" 
+      alt="Future Goals" 
+      class="w-full h-50 md:h-10 lg:h-20 rounded-2xl shadow-xl mb-6 object-cover"
+    >
+  </div>
+
+  <!-- Short-Term Goals -->
+  <div class="mb-12">
+    <h3 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-6 border-l-8 border-indigo-500 pl-4"
+      data-aos="fade-right">
+      Short-Term Goals
+    </h3>
+
+    <!-- Row 1 -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-center mb-10">
+      <div class="md:col-span-1 md:order-1 ">
+        <img src="images/short_term_goals_1.avif" class="w-full rounded-xl shadow-lg object-cover h-48" />
+      </div>
+      <div
+        class="md:col-span-3 md:order-2 bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg dark:hover:shadow-indigo-900/40  hover:shadow-2xl transition transform hover:-translate-y-1"
+        data-aos="fade-up">
+        <h4 class="text-xl font-semibold text-indigo-600 dark:text-indigo-400 mb-3">Finish my BSc with excellence</h4>
+        <p class="text-gray-700 dark:text-gray-300 mb-5">I aim to complete my Bachelor’s degree with strong academic performance that reflects both dedication and curiosity toward science. My priority is to build a solid foundation in Physics, Chemistry, and Earth Sciences, ensuring I am fully prepared for advanced research pathways.</p>
+        <p class="text-gray-700 dark:text-gray-300 mb-3">How I plan to achieve this:</p>
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
+          <li>Maintain high grades</li>
+          <li>Build analytical & lab skills</li>
+          <li>Engage actively in lectures & labs</li>
+          <li>Seek mentorship from lecturers</li>
+          <li>Follow a steady self-study plan</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-center mb-10">
+      <div class="md:col-span-1 md:order-2 ">
+        <img src="images/short_term_goals_2.jpeg" class="w-full rounded-xl shadow-lg object-cover h-48" />
+      </div>
+      <div
+        class="md:col-span-3 md:order-1 bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg dark:hover:shadow-indigo-900/40  hover:shadow-2xl transition transform hover:-translate-y-1"
+        data-aos="fade-up">
+        <h4 class="text-xl font-semibold text-indigo-600 dark:text-indigo-400 mb-3">Grow as a young researcher</h4>
+        <p class="text-gray-700 dark:text-gray-300 mb-5">I aim to complete my Bachelor’s degree with strong academic performance that reflects both dedication and curiosity toward science. My priority is to build a solid foundation in Physics, Chemistry, and Earth Sciences, ensuring I am fully prepared for advanced research pathways.</p>
+        <p class="text-gray-700 dark:text-gray-300 mb-3">How I plan to achieve this:</p>
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
+          <li>Learn experiment design</li>
+          <li>Improve data analysis</li>
+          <li>Practice scientific writing</li>
+          <li>Present at student conferences</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-center mb-10">
+      <div class="md:col-span-1 md:order-1 ">
+        <img src="images/short_term_goals_3.jpeg" class="w-full rounded-xl shadow-lg object-cover h-48" />
+      </div>
+      <div
+        class="md:col-span-3 md:order-2 bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg dark:hover:shadow-indigo-900/40  hover:shadow-2xl transition transform hover:-translate-y-1"
+        data-aos="fade-up">
+        <h4 class="text-xl font-semibold text-indigo-600 dark:text-indigo-400 mb-3">Explore real-world science</h4>
+        <p class="text-gray-700 dark:text-gray-300 mb-5">I aim to complete my Bachelor’s degree with strong academic performance that reflects both dedication and curiosity toward science. My priority is to build a solid foundation in Physics, Chemistry, and Earth Sciences, ensuring I am fully prepared for advanced research pathways.</p>
+        <p class="text-gray-700 dark:text-gray-300 mb-3">How I plan to achieve this:</p>
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
+          <li>Internships in labs or geoscience fields</li>
+          <li>Environmental field training</li>
+          <li>Volunteer in sustainability projects</li>
+          <li>Observe professional research processes</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Row 4 -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-center mb-10">
+      <div class="md:col-span-1 md:order-2">
+        <img src="images/short_term_goals_4.jfif" class="w-full rounded-xl shadow-lg object-cover h-48" />
+      </div>
+      <div
+        class="md:col-span-3 md:order-1 bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg dark:hover:shadow-indigo-900/40  hover:shadow-2xl transition transform hover:-translate-y-1"
+        data-aos="fade-up">
+        <h4 class="text-xl font-semibold text-indigo-600 dark:text-indigo-400 mb-3">Share my first scientific contribution</h4>
+        <p class="text-gray-700 dark:text-gray-300 mb-5">I aim to complete my Bachelor’s degree with strong academic performance that reflects both dedication and curiosity toward science. My priority is to build a solid foundation in Physics, Chemistry, and Earth Sciences, ensuring I am fully prepared for advanced research pathways.</p>
+        <p class="text-gray-700 dark:text-gray-300 mb-3">How I plan to achieve this:</p>
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
+          <li>Present a research poster</li>
+          <li>Submit to student conferences</li>
+          <li>Draft my first manuscript</li>
+          <li>Collaborate with peers</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Long-Term Goals -->
+  <div class="mb-12">
+    <h3 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-6 border-l-8 border-indigo-500 pl-4"
+      data-aos="fade-right">
+      Long-Term Goals
+    </h3>
+
+    <!-- Row 1 -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-center mb-10">
+      <div class="md:col-span-1 md:order-2">
+        <img src="images/long_term_goal_1.jpg" class="w-full rounded-xl shadow-lg object-cover h-48" />
+      </div>
+      <div
+        class="md:col-span-3 md:order-1 bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg dark:hover:shadow-indigo-900/40 hover:shadow-2xl transition transform hover:-translate-y-1"
+        data-aos="fade-up">
+        <h4 class="text-xl font-semibold text-indigo-600 dark:text-indigo-400 mb-3">Become a scientist in applied physics or geoscience</h4>
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
+          <li>Study Earth's structure & geophysical processes</li>
+          <li>Explore oceanographic systems & climate dynamics</li>
+          <li>Develop sustainable environmental solutions</li>
+          <li>Use technology for Earth data collection</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-center mb-10">
+      <div class="md:col-span-1 md:order-1">
+        <img src="images/long_term_goal_2.jfif" class="w-full rounded-xl shadow-lg object-cover h-48" />
+      </div>
+      <div
+        class="md:col-span-3 md:order-2 bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg dark:hover:shadow-indigo-900/40  hover:shadow-2xl transition transform hover:-translate-y-1"
+        data-aos="fade-up">
+        <h4 class="text-xl font-semibold text-indigo-600 dark:text-indigo-400 mb-3">Pursue a Master's or PhD abroad</h4>
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
+          <li>Join top-tier research universities</li>
+          <li>Participate in advanced research groups</li>
+          <li>Publish high-quality papers</li>
+          <li>Build an international research network</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-center mb-10">
+      <div class="md:col-span-1 md:order-2">
+        <img src="images/long_term_goal_3.webp" class="w-full rounded-xl shadow-lg object-cover h-48" />
+      </div>
+      <div
+        class="md:col-span-3 md:order-1 bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg dark:hover:shadow-indigo-900/40  hover:shadow-2xl transition transform hover:-translate-y-1"
+        data-aos="fade-up">
+        <h4 class="text-xl font-semibold text-indigo-600 dark:text-indigo-400 mb-3">Join marine or environmental research institutes</h4>
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
+          <li>Work in oceanographic labs or climate centers</li>
+          <li>Contribute to environmental monitoring projects</li>
+          <li>Analyze marine & climate data</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Row 4 -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-center mb-10">
+      <div class="md:col-span-1 md:order-1">
+        <img src="images/long_term_goal_4.jpg" class="w-full rounded-xl shadow-lg object-cover h-48" />
+      </div>
+      <div
+        class="md:col-span-3 md:order-2 bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg dark:hover:shadow-indigo-900/40  hover:shadow-2xl transition transform hover:-translate-y-1"
+        data-aos="fade-up">
+        <h4 class="text-xl font-semibold text-indigo-600 dark:text-indigo-400 mb-3">Lead sustainability & science education initiatives</h4>
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
+          <li>Mentor young students in STEM</li>
+          <li>Develop community environment programs</li>
+          <li>Promote science literacy nationwide</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-12 bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 dark:hover:shadow-indigo-900/40 hover:shadow-2xl transition transform hover:-translate-y-1"
+    data-aos="fade-up">
+    <h3 class="text-2xl font-semibold text-indigo-600 dark:text-indigo-400 mb-3">✨ Personal Vision Statement</h3>
+    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+      “I dream of becoming a scientist who blends curiosity with purpose—studying our planet not just to understand
+      it, but to protect it. I am committed to creating meaningful scientific contributions that support a sustainable
+      and resilient future.”
+    </p>
+  </div>
+
+</section>
+  </main>
+
+  <!-- Social Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-10 mt-16">
+    <div class="max-w-7xl mx-auto text-center space-y-4">
+      <h3 class="text-xl font-semibold text-indigo-400">Connect with Me</h3>
+      <div class="flex justify-center space-x-6">
+        <a href="https://www.facebook.com/anjali.nimesha.37?mibextid=ZbWKwL" class="hover:text-indigo-400 transition"><i data-feather="facebook"></i></a>
+        <a href="#" class="hover:text-indigo-400 transition"><i data-feather="instagram"></i></a>
+        <a href="https://www.linkedin.com/in/anjali-somasiri-729057319/" class="hover:text-indigo-400 transition"><i data-feather="linkedin"></i></a>
+        <a href="#" class="hover:text-indigo-400 transition"><i data-feather="github"></i></a>
+      </div>
+      <p class="text-sm opacity-70">© 2025 Anjali Somasiri — All Rights Reserved.</p>
+    </div>
+  </footer>
+
+
+
+</body>
+
+</html>
